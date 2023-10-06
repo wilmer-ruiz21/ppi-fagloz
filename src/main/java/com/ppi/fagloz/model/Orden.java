@@ -2,7 +2,21 @@ package com.ppi.fagloz.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "ordenes")
 public class Orden {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private Integer id;
 	private String numero;
@@ -10,6 +24,12 @@ public class Orden {
 	private Date fechaRecibida;
 	
 	private double total;
+	
+	@ManyToOne
+	private Usuario usuario;
+	
+	@OneToOne(mappedBy = "orden")
+	private DetalleOrden detalle;
 	
 	public Orden() {
 		// TODO Auto-generated constructor stub
@@ -62,6 +82,25 @@ public class Orden {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+	
+	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	
+	public DetalleOrden getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(DetalleOrden detalle) {
+		this.detalle = detalle;
 	}
 
 	@Override
