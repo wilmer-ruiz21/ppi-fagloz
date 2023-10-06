@@ -1,5 +1,6 @@
 package com.ppi.fagloz.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,12 @@ public class ProductoServiceImpl implements ProductoService {
 	public void delete(Integer id) {
 		productoRepository.deleteById(id);
 		
+	}
+
+	@Override
+	public List<Producto> findAll() {
+		
+		return productoRepository.findAll();
 	}
 
 	
