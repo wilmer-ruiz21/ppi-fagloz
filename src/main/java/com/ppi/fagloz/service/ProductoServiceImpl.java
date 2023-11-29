@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ppi.fagloz.model.Producto;
-import com.ppi.fagloz.repository.ProductoRepository;
+import com.ppi.fagloz.repository.IProductoRepository;
 
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
 
 	@Autowired
-	private ProductoRepository productoRepository;
+	private IProductoRepository productoRepository;
 	
 	
 	@Override
