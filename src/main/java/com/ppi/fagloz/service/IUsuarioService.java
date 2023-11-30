@@ -7,6 +7,7 @@ import com.ppi.fagloz.model.Usuario;
 public interface IUsuarioService {
 
 	Optional<Usuario> findById(Integer id);
+	Usuario save (Usuario usuario);
 	
 	
 }
