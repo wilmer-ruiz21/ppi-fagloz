@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ppi.fagloz.model.Orden;
+import com.ppi.fagloz.model.Usuario;
 import com.ppi.fagloz.repository.IOrdenRepository;
 
 @Service
@@ -57,5 +58,10 @@ public class OrdenServiceImpl implements IOrdenService{
 		}
 		
 		return numeroConcatenado;
+	}
+
+	@Override
+	public List<Orden> findByUsuario(Usuario usuario) {
+		return ordenRepository.findByUsuario(usuario);
 	}
 }

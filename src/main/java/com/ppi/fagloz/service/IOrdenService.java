@@ -3,6 +3,7 @@ package com.ppi.fagloz.service;
 import java.util.List;
 
 import com.ppi.fagloz.model.Orden;
+import com.ppi.fagloz.model.Usuario;
 
 public interface IOrdenService {
 	
@@ -10,4 +11,6 @@ public interface IOrdenService {
 	
 	Orden save (Orden orden);
 	String generarNumeroOrden();
+	List<Orden> findByUsuario (Usuario usuario);
+	
 }
